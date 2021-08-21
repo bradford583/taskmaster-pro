@@ -92,10 +92,10 @@ $(".card .list-group").sortable({
   tolerence: "pointer",
   helper: "clone",
   activate: function(event) {
-    
+    $(this).addClass("dropover");
   },
   deactivate: function(event) {
-    
+    $(this).removeClass("dropover");
   },
   over: function(event) {
     
@@ -266,5 +266,11 @@ $("#remove-tasks").on("click", function () {
 
 // load tasks for the first time
 loadTasks();
+
+setInterval(function() {
+  $(".card .list-group-item").each(function(index, el) {
+    auditTask(el);
+  });
+}, (1000 * 60) * 30);
 
 
