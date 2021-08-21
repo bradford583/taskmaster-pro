@@ -98,10 +98,10 @@ $(".card .list-group").sortable({
     $(this).removeClass("dropover");
   },
   over: function(event) {
-    
+    $(event.target).addClass("dropover-active");
   },
   out: function(event) {
-    
+    $(event.target).removeClass("dropover-active");
   },
   update: function(event) {
 
